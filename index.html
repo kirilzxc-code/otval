@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ОООтвалились колеса — автосервис</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#E6E9EC;--surface:#F4F6F7;--ink:#1A1E22;--muted:#4D565E;--line:#C3CAD0;--cone:#E5421B;--on-cone:#fff;--tire:#1A1E22;--rim:#9AA4AC;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15181B;--surface:#1E2327;--ink:#ECEFF1;--muted:#A3ADB5;--line:#333B42;--cone:#FF6A3D;--on-cone:#15181B;--tire:#0B0D0F;--rim:#7C868E}}
+:root[data-theme="dark"]{--bg:#15181B;--surface:#1E2327;--ink:#ECEFF1;--muted:#A3ADB5;--line:#333B42;--cone:#FF6A3D;--on-cone:#15181B;--tire:#0B0D0F;--rim:#7C868E}
+*,*::before,*::after{box-sizing:border-box}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 "Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cone);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem)}
+h1,h2,h3{font-family:Unbounded,"Arial Black",Impact,sans-serif;line-height:1.1;margin:0}
+header.top{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-block:1.25rem}
+.logo{font:700 1rem Unbounded,"Arial Black",sans-serif;text-decoration:none}
+.btn{display:inline-block;background:var(--cone);color:var(--on-cone);font-weight:600;text-decoration:none;padding:.8rem 1.4rem;border-radius:999px}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.hero{padding-block:clamp(2rem,7vw,5rem) 0}
+.hero h1{font-size:clamp(2.3rem,9.4vw,6.2rem);font-weight:700;letter-spacing:-.02em;overflow-wrap:anywhere}
+.hero p.lead{max-width:34rem;font-size:1.2rem;color:var(--muted);margin:1.5rem 0 2rem}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem}
+.road{position:relative;height:150px;margin-top:2rem;border-bottom:4px dashed var(--ink);overflow:hidden}
+.road .note{position:absolute;left:0;bottom:.8rem;margin:0;max-width:15rem;font-size:.95rem;color:var(--muted)}
+.wheel{position:absolute;bottom:-4px;left:calc(100% - 150px);width:120px;height:120px}
+.wheel svg{width:100%;height:100%;display:block}
+@media (prefers-reduced-motion:no-preference){
+.wheel{animation:roll 2.6s cubic-bezier(.15,.65,.25,1) both}
+.wheel svg{animation:spin 2.6s cubic-bezier(.15,.65,.25,1) both}
+}
+@keyframes roll{from{left:-140px}to{left:calc(100% - 150px)}}
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(900deg)}}
+section{padding-block:clamp(3rem,8vw,5.5rem)}
+section h2{font-size:clamp(1.6rem,4.5vw,2.6rem);margin-bottom:2rem;max-width:22ch}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:0;border-top:2px solid var(--ink)}
+.services div{padding:1.4rem 1.4rem 1.6rem 0;border-bottom:1px solid var(--line)}
+.services h3{font-size:1.05rem;margin-bottom:.5rem}
+.services p{margin:0;color:var(--muted)}
+.services small{display:block;margin-top:.8rem;font-weight:600}
+.band{background:var(--surface);border-block:1px solid var(--line)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:1.5rem;counter-reset:s}
+.steps li{counter-increment:s;border-left:4px solid var(--cone);padding-left:1rem}
+.steps li::before{content:counter(s);font:700 1.6rem Unbounded,sans-serif;display:block}
+.steps b{display:block}
+.steps span{color:var(--muted);font-size:.95rem}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:2rem}
+.contact dl{margin:0}
+.contact dt{font-weight:600;margin-top:1rem}
+.contact dd{margin:0;color:var(--muted)}
+.big{font:700 clamp(1.4rem,4vw,2rem) Unbounded,sans-serif;text-decoration:none;display:block;margin:.5rem 0 1.2rem}
+footer{padding-block:2rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="logo" href="#">ОООтвалились колеса</a>
+  <a class="btn" href="tel:+375291894891">Позвонить</a>
+</header>
+
+<main>
+<div class="hero">
+  <h1>ОООтвалились колеса</h1>
+  <p class="lead">Автосервис, где колёса держатся. Название — про вашу машину до визита к нам.</p>
+  <div class="cta">
+    <a class="btn" href="#kontakty">Записаться на ремонт</a>
+    <a class="btn ghost" href="#uslugi">Что мы делаем</a>
+  </div>
+  <div class="road" aria-hidden="true">
+    <p class="note">Это колесо мы закрепили. Откатилось само, но уже вернулось.</p>
+    <div class="wheel">
+      <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="58" fill="var(--tire)"/><circle cx="60" cy="60" r="38" fill="var(--rim)"/><circle cx="60" cy="60" r="12" fill="var(--tire)"/><g fill="var(--cone)"><circle cx="60" cy="38" r="5"/><circle cx="81" cy="53" r="5"/><circle cx="73" cy="78" r="5"/><circle cx="47" cy="78" r="5"/><circle cx="39" cy="53" r="5"/></g></svg>
+    </div>
+  </div>
+</div>
+
+<section id="uslugi">
+  <h2>Чиним то, что стучит, скрипит и отваливается</h2>
+  <div class="services">
+    <div><h3>Диагностика ходовой</h3><p>Осмотр подвески, рулевого и тормозов. Покажем, что изношено, и что может подождать.</p><small>около 40 минут</small></div>
+    <div><h3>Замена масла и фильтров</h3><p>Масло по допуску производителя, новые масляный и воздушный фильтры.</p><small>около 1 часа</small></div>
+    <div><h3>Тормоза</h3><p>Колодки, диски, суппорты, тормозная жидкость. Проверяем после замены на тестовой поездке.</p><small>от 1,5 часов</small></div>
+    <div><h3>Шиномонтаж и балансировка</h3><p>Сезонная замена, ремонт проколов, балансировка. Гайки затягиваем динамометрическим ключом.</p><small>около 1 часа</small></div>
+    <div><h3>Развал-схождение</h3><p>Выставляем углы по заводским значениям. Распечатка «до» и «после» остаётся у вас.</p><small>около 1 часа</small></div>
+    <div><h3>Электрика и ошибки на панели</h3><p>Компьютерная диагностика, поиск утечек тока, ремонт проводки и датчиков.</p><small>от 1 часа</small></div>
+  </div>
+</section>
+
+<section class="band" style="margin-inline:calc(50% - 50vw);padding-inline:calc(50vw - 50%)">
+  <h2>Как проходит ремонт</h2>
+  <ol class="steps">
+    <li><b>Приёмка</b><span>Вы рассказываете, что не так. Мы осматриваем машину при вас.</span></li>
+    <li><b>Диагностика</b><span>Находим причину, а не только симптом.</span></li>
+    <li><b>Согласование</b><span>Называем стоимость и сроки. Без вашего «да» ничего не меняем.</span></li>
+    <li><b>Ремонт и выдача</b><span>Возвращаем старые детали и даём гарантию на работы.</span></li>
+  </ol>
+</section>
+
+<section id="kontakty">
+  <h2>Запишитесь, пока колёса на месте</h2>
+  <div class="contact">
+    <div>
+      <a class="big" href="tel:+375291894891">+375 29 189-48-91</a>
+      <a class="btn" href="tel:+375291894891">Позвонить в сервис</a>
+    </div>
+    <dl>
+      <dt>Адрес</dt><dd>Замковая улица, 33, Минск</dd>
+      <dt>Часы работы</dt><dd>Пн–Пт 9:00–20:00<br>Сб 10:00–17:00<br>Вс — выходной</dd>
+    </dl>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 ООО «Отвалились колёса». Все гайки затянуты.</footer>
+</div>
+</body>
+</html>
